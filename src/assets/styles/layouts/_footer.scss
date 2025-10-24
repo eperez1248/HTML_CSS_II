@@ -1,0 +1,9 @@
+@use "../variables";
+@use "../functions";
+
+
+.pie-pagina{
+    background-color: variables.$color-principal;
+    color: functions.color-texto(variables.$color-principal);
+    padding: 1rem;
+}

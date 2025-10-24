@@ -1,0 +1,270 @@
+@use "../variables";
+@use "../functions";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: variables.$font-family-sans-serif;
+  background-color: variables.$color-fondo;
+  margin: 0;
+}
+
+.portada {
+  background: url('/src/assets/images/portada.jpg');
+  background-position: top;
+  background-size: cover;
+  padding: 10rem 3rem;
+  display: flex;
+}
+
+.introduccion {
+  padding: 3rem 8%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.introduccion__contenido {
+  flex: 1 1 30%;
+  margin-right: 2rem;
+  min-width: 252px;
+  color: functions.color-texto(variables.$color-fondo);
+}
+
+.introduccion__titulo {
+  text-align: center;
+  @include variables.fuente-titulo;
+}
+
+.introduccion__imagen {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+
+  img {
+    border-radius: 10px;
+    width: 60%;
+  }
+}
+
+.partes {
+  padding: 3rem 8%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: variables.$color-principal;
+}
+
+.partes__contenido {
+  flex: 1 1 30%;
+  margin-left: 3rem;
+  min-width: 252px;
+  color: functions.color-texto(variables.$color-principal);
+}
+
+.partes__titulo {
+  text-align: center;
+  @include variables.fuente-titulo;
+}
+
+.partes__texto {
+  list-style: none;
+
+  li::before {
+    content: '\f0a4';
+    font-family: 'Font Awesome 7 Free', sans-serif;
+    margin-right: 8px;
+    font-weight: 900;
+  }
+
+  li {
+    margin-top: 1.5rem;
+  }
+}
+
+.partes__imagen {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+
+  img {
+    border-radius: 10px;
+    width: 60%;
+  }
+}
+
+.icono {
+  margin-right: 1rem;
+}
+
+.sabores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sabores__contenido {
+  text-align: center;
+  margin: 1.5rem 0;
+  color: functions.color-texto(variables.$color-fondo);
+}
+
+.sabores__titulo{
+  @include variables.fuente-titulo;
+}
+
+.sabores__imagen {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  img {
+    width: 20%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+
+.paneles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.panel {
+  flex: 1 1 45%;
+  text-align: center;
+  background-color: variables.$color-panel;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  min-height: 300px;
+  color: functions.color-texto(variables.$color-panel);
+}
+
+.rutas__titulo{
+  @include variables.fuente-titulo;
+}
+
+.rutas__imagen {
+  img {
+    width: 40%;
+    border-radius: 10px;
+  }
+}
+
+.ubicacion__titulo{
+  @include variables.fuente-titulo;
+}
+
+.ubicacion__imagen {
+  img {
+    width: 40%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width:768px) {
+
+  .introduccion {
+    flex-direction: column;
+    padding: 0 5%;
+    gap: 1rem;
+  }
+
+  .introduccion__contenido{
+    margin: 0;
+  }
+
+  .introduccion__texto {
+  text-align: center;
+}
+
+  .introduccion__imagen {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  .partes {
+    padding: 0 5%;
+    flex-direction: column-reverse;
+    gap:1rem;
+  }
+
+  .partes__contenido {
+    margin-left: 0;
+  }
+
+  .partes__imagen {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  .paneles {
+    flex-direction: column;
+  }
+
+  .sabores{
+    gap: 1rem;
+  }
+
+  .sabores__contenido {
+  margin: 0;
+}
+
+  .sabores__imagen {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+
+    img {
+      width: 100%;
+      height: 150px;
+    }
+  }
+
+  .rutas__imagen {
+    img {
+      width: 80%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .ubicacion__imagen {
+    img {
+      width: 80%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+}

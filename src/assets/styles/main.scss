@@ -1,0 +1,53 @@
+/**
+ * Use this file to import partials.
+ * Do not include SCSS code in this file.
+ */
+
+ /**
+ * Import dependencies
+ */
+@use "dependencies";
+
+/**
+ * Import layouts
+ * It's a best practice to use a different partial for each page
+ */
+
+ @use "layouts/home";
+ @use "layouts/footer";
+
+/**
+ * Do NOT include anything else in this file!
+ */
+
+// Variables
+$color: red;
+$bg-color: #f5f5f5;
+
+// Mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Estilos
+.card {
+  background-color: $bg-color;
+  color: $color;
+  padding: 20px;
+  height: 200px;
+
+  @include flex-center;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    color: gray;
+  }
+}
+
