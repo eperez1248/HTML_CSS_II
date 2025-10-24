@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:color";
 
 @function color-texto($color-fondo) {
   @if (color.lightness($color-fondo) > 50) {
